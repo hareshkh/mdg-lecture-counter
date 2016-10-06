@@ -7,30 +7,33 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button i, d;
-    TextView text;
+    Button increase, decrease;
+    TextView count;
+    int previousCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        i = (Button) findViewById(R.id.buttonInc);
-        d = (Button) findViewById(R.id.buttonDec);
-        text = (TextView) findViewById(R.id.textView);
+        increase = (Button) findViewById(R.id.buttonInc);
+        decrease = (Button) findViewById(R.id.buttonDec);
+        count = (TextView) findViewById(R.id.textView);
 
-        text.setText(String.valueOf(0));
-        i.setOnClickListener(new View.OnClickListener() {
+        count.setText(String.valueOf(0));
+        increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText(String.valueOf((Integer.parseInt(text.getText().toString()) + 1)));
+                previousCount = (Integer.parseInt(count.getText().toString()));
+                count.setText(String.valueOf(previousCount + 1));
             }
         });
 
-        d.setOnClickListener(new View.OnClickListener() {
+        decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText(String.valueOf((Integer.parseInt(text.getText().toString()) - 1)));
+                previousCount = (Integer.parseInt(count.getText().toString()));
+                count.setText(String.valueOf(previousCount - 1));
             }
         });
     }
