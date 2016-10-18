@@ -1,4 +1,4 @@
-package com.sdsmdg.hareshkh.incrementer;
+package com.sdsmdg.hareshkh.counter;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

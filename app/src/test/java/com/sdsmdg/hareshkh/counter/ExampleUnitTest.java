@@ -1,4 +1,4 @@
-package com.sdsmdg.hareshkh.incrementer;
+package com.sdsmdg.hareshkh.counter;
 
 import org.junit.Test;
 
